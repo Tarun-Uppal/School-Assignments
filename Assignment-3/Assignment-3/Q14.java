@@ -24,9 +24,9 @@ public class Q14
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9 - i; j++) {
                 if (arr[j] < arr[j + 1]) {
-                    int t = arr[j];
+                    int temp = arr[j];
                     arr[j] = arr[j+1];
-                    arr[j+1] = t;
+                    arr[j+1] = temp;
                 }
             }
         }
@@ -34,14 +34,14 @@ public class Q14
         int high = 9;
         while(low != high){
             int mid = (low + high)/2;
-            System.out.println(mid);
             if (to_find == arr[mid]){
                 val = true;
                 break;
-            }else if (to_find < arr[mid])
+            }else if (to_find < arr[mid]){
                 low = mid + 1;
-            else                
+            }else{                
                 high = mid - 1;
+            }
         }
     }
 
